@@ -4,17 +4,28 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { DeviceDetailComponent } from './device-detail/device-detail.component';
+import { DeviceListComponent } from './device-list/device-list.component';
+import { DeviceService } from './device.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+import { AppRoutingModule }     from './app-routing.module';
+import { OAuthService } from 'angular2-oauth2/oauth-service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DeviceDetailComponent,
+    DeviceListComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [DeviceService, OAuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
