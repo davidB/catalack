@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { DeviceDetailComponent } from './device-detail/device-detail.component';
@@ -13,6 +14,8 @@ import { AppRoutingModule }     from './app-routing.module';
 import { OAuthService } from 'angular2-oauth2/oauth-service';
 import { AuthBtnComponent } from './auth-btn/auth-btn.component';
 
+import 'hammerjs';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +25,7 @@ import { AuthBtnComponent } from './auth-btn/auth-btn.component';
     AuthBtnComponent
   ],
   imports: [
+    MaterialModule.forRoot(),
     BrowserModule,
     FormsModule,
     HttpModule,

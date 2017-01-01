@@ -1,9 +1,18 @@
-<div *ngIf="device">
-  <h2>{{device.name}}</h2>
-  <div><label>id:</label>{{device.id}}</div>
-  <div>
-      <label>name: </label>
-      <input [(ngModel)]="device.name" placeholder="name"/>
-  </div>
-  <button (click)="goBack()">Back</button>
-</div>
+<md-card *ngIf="device">
+  <md-card-header>
+    <div md-card-avatar></div>
+    <md-card-title>{{device.name}}</md-card-title>
+  </md-card-header>
+  <md-card-content>
+    <md-input-container class="full-width">
+      <input md-input placeholder="name" disabled [(ngModel)]="device.name">
+    </md-input-container>
+    <md-input-container class="full-width">
+      <input md-input placeholder="device id" disabled [(ngModel)]="device.id">
+    </md-input-container>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button (click)="goBack()">Back</button>
+    <button md-button disabled>Delete</button>
+  </md-card-actions>
+</md-card>

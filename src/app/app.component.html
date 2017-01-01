@@ -1,7 +1,13 @@
-<h1>{{title}}</h1>
-<app-auth-btn></app-auth-btn>
-<nav>
-  <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-  <a routerLink="/devices" routerLinkActive="active">Devices</a>
+<md-toolbar color="primary">
+  <span>{{title}}</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="fill-remaining-space"></span>
+  <app-auth-btn></app-auth-btn>
+</md-toolbar>
+
+<nav md-tab-nav-bar>
+  <a md-tab-link routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+  <a md-tab-link routerLink="/devices" routerLinkActive="active">Devices</a>
 </nav>
 <router-outlet></router-outlet>
