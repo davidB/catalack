@@ -11,13 +11,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { AppRoutingModule }     from './app-routing.module';
 import { OAuthService } from 'angular2-oauth2/oauth-service';
+import { AuthBtnComponent } from './auth-btn/auth-btn.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DeviceDetailComponent,
     DeviceListComponent,
-    DashboardComponent
+    DashboardComponent,
+    AuthBtnComponent
   ],
   imports: [
     BrowserModule,

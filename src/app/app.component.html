@@ -1,17 +1,5 @@
 <h1>{{title}}</h1>
-<p *ngIf="!name">
-    Hallo
-</p>
-<p *ngIf="name">
-    Hallo, {{name}}
-</p>
- 
-<button class="btn btn-default" (click)="login()">
-    Login
-</button>
-<button class="btn btn-default" (click)="logoff()">
-    Logout
-</button>
+<app-auth-btn></app-auth-btn>
 <nav>
   <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
   <a routerLink="/devices" routerLinkActive="active">Devices</a>

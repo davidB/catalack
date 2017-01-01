@@ -1,0 +1,6 @@
+<button class="btn btn-default" (click)="login()" *ngIf="!accessToken">
+    Login
+</button>
+<button class="btn btn-default" (click)="logoff()" *ngIf="accessToken">
+    Logout
+</button>
