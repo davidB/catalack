@@ -1,6 +1,6 @@
 import { DavidbArtikcloudClientPage } from './app.po';
 
-describe('davidb-artikcloud-client App', function() {
+describe('catalack App', function() {
   let page: DavidbArtikcloudClientPage;
 
   beforeEach(() => {

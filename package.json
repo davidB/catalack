@@ -1,7 +1,7 @@
 {
-  "name": "davidb-artikcloud-client",
-  "version": "0.0.0",
-  "license": "MIT",
+  "name": "catalack",
+  "version": "0.1.0",
+  "license": "CC-0",
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
@@ -10,7 +10,7 @@
     "test": "ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "protractor",
-    "postinstall": "ng build --aot -prod --output-path build"
+    "build": "ng build --aot -prod --env=prod --output-path build"
   },
   "private": true,
   "dependencies": {
