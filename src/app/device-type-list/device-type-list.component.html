@@ -1,0 +1,11 @@
+<md-input-container class="full-width">
+  <input #searchBox type="search" id="search-box" placeholder="search" (keyup)="search(searchBox.value)" md-input />
+</md-input-container>
+<md-list class="deviceTypes">
+    <md-list-item *ngFor="let deviceType of deviceTypes | async"
+      [class.selected]="deviceType === selectedDeviceType"
+      >
+      <!--img md-list-avatar src="..." alt="..."></img-->
+      <p md-line><a [routerLink]="['/deviceType', deviceType.id]">{{deviceType.name}}</a></p>
+    </md-list-item>
+</md-list>

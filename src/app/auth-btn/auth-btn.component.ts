@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OAuthService } from 'angular2-oauth2/oauth-service';
+import { ApolloClient } from 'apollo-client';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-auth-btn',
@@ -13,13 +15,13 @@ export class AuthBtnComponent implements OnInit {
 
   ngOnInit() {
     // Login-Url
-    this.oauthService.loginUrl = "https://accounts-dev.artik.cloud/authorize"; //Id-Provider?
+    this.oauthService.loginUrl = environment.auth.url + "/authorize"; //Id-Provider?
     
     // URL of the SPA to redirect the user to after login
     this.oauthService.redirectUri = window.location.origin + "/";
       
     // The SPA's id. Register SPA with this id at the auth-server
-    this.oauthService.clientId = "ebf1b426ca854ffcb7ccdef90505ee31";
+    this.oauthService.clientId = environment.auth.clientId;
     
     // The name of the auth-server that has to be mentioned within the token
     //this.oauthService.issuer = "https://api-dev.artik.cloud/users/self";
@@ -36,7 +38,7 @@ export class AuthBtnComponent implements OnInit {
     this.oauthService.setStorage(sessionStorage);
     
     // To also enable single-sign-out set the url for your auth-server's logout-endpoint here
-    this.oauthService.logoutUrl = "https://accounts-dev.artik.cloud/logout?redirect_uri="+ window.location.origin +"/&token={{access_token}}";
+    this.oauthService.logoutUrl = environment.auth.url + "/logout?redirect_uri="+ window.location.origin +"/&token={{access_token}}";
     
     // This method just tries to parse the token within the url when
     // the auth-server redirects the user back to the web-app
@@ -55,10 +57,12 @@ export class AuthBtnComponent implements OnInit {
   
   public login() {
     this.oauthService.initImplicitFlow();
+    //ApolloClient.resetStore();
   }
   
   public logoff() {
     this.oauthService.logOut();
+    //ApolloClient.resetStore();
   }
   
   public get accessToken() {
