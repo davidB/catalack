@@ -5,7 +5,7 @@ export const environment = {
     clientId: null,
   },
   authPublic: {
-    url: "http://akcpublic-155422.appspot.com/",
+    url: "https://akcpublic-155422.appspot.com/",
   },
   api: {
     rest: "https://api.artik.cloud/v1.1/",
