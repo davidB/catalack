@@ -8,6 +8,11 @@ export interface DeviceType {
   "protected": boolean;
   hasCloudConnector: boolean;
   lastUpdated: number;
+  logoUrl: string;
+}
+
+export interface DeviceTypeDetails extends DeviceType {
+  manifest: DtManifest;
 }
 
 export interface DtManifest {

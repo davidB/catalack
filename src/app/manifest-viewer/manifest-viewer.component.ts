@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { DtManifest } from '../device-type';
 
@@ -9,7 +9,7 @@ import { DtManifest } from '../device-type';
 })
 export class ManifestViewerComponent implements OnInit {
 
-//@Input
+  @Input()
   manifest: DtManifest;
 
   constructor() { }
@@ -17,4 +17,7 @@ export class ManifestViewerComponent implements OnInit {
   ngOnInit() {
   }
 
+  asRawJson(): string {
+    return JSON.stringify(this.manifest, null, ' ');
+  }
 }
