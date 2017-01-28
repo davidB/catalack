@@ -4,8 +4,18 @@
 <md-list class="deviceTypes">
     <md-list-item *ngFor="let deviceType of deviceTypes | async"
       [class.selected]="deviceType === selectedDeviceType"
+      (click)="router.navigate(['/deviceType', deviceType.id])"
+      class="clickable"
       >
-      <!--img md-list-avatar src="..." alt="..."></img-->
-      <p md-line><a [routerLink]="['/deviceType', deviceType.id]">{{deviceType.name}}</a></p>
+      <img md-list-avatar src="{{deviceType.logoUrl}}" alt="" *ngIf="deviceType.logoUrl">
+      <i md-list-avatar class="fa fa-cube" aria-hidden="true" *ngIf="!deviceType.logoUrl"></i>
+
+      <h3 md-line>{{deviceType.name}}</h3>
+      <p md-line class="dim">{{deviceType.uniqueName}} ({{deviceType.id}})</p>
+      <p md-line>
+      <i class="fa fa-lock" aria-hidden="true" *ngIf="deviceType.protected" mdTooltip="protected" mdTooltipPosition="below"></i>
+      <i class="fa fa-cloud" aria-hidden="true" *ngIf="deviceType.hasCloudConnector" mdTooltip="cloud connector" mdTooltipPosition="below"></i>
+      </p>
+      <p md-line>tags: <i *ngFor="let tag of deviceType.tags">{{tag.name}}, </i></p>
     </md-list-item>
 </md-list>

@@ -12,3 +12,9 @@ body {
 .full-width {
   width: 100%;
 }
+.clickable {
+  cursor: pointer;
+}
+.dim {
+  color: rgba(0,0,0,.54);
+}
