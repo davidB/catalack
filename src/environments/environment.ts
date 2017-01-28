@@ -10,7 +10,7 @@ export const environment = {
     clientId: "ebf1b426ca854ffcb7ccdef90505ee31",
   },
   authPublic: {
-    url: "http://localhost:9002/",
+    url: "https://akcpublic-155422.appspot.com/",
   },
   api: {
     rest: "https://api.artik.cloud/v1.1/",
